@@ -101,4 +101,6 @@ def complete(result):
     return render_template('complete.html',content=result)
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.getenv('PORT', 5000))
+    application.run(debug=False, port=port, host='0.0.0.0', threaded=True)
+    
